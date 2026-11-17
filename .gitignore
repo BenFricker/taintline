@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+
+# Generated data and raw results (regenerated from scripts)
+data/*
+!data/.gitkeep
+!data/README.md
+evals/results/raw/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
