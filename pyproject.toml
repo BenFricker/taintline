@@ -1,7 +1,7 @@
 [project]
 name = "taintline"
 version = "0.1.0"
-description = "Add your description here"
+description = "Local-first AI SOC triage agent with a hardened harness, evaluated against log-borne prompt injection"
 readme = "README.md"
 authors = [
     { name = "BenFricker", email = "107805396+BenFricker@users.noreply.github.com" }
@@ -15,3 +15,39 @@ taintline = "taintline:main"
 [build-system]
 requires = ["uv_build>=0.13.8,<0.14.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "cyclonedx-bom>=8.0.1",
+    "pip-audit>=2.10.1",
+    "pre-commit>=4.7.0",
+    "pyright[nodejs]>=1.1.414",
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+# ---------------------------------------------------------------- tool settings
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+# E/W pycodestyle, F pyflakes, I import order, B bugbear, UP modern syntax,
+# S security (bandit rules), N naming, SIM simplifications, RUF ruff-specific
+select = ["E", "W", "F", "I", "B", "UP", "S", "N", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]  # `assert` is how pytest works
+
+[tool.pyright]
+include = ["src", "tests"]
+pythonVersion = "3.12"
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
