@@ -22,6 +22,10 @@ data/*
 !data/README.md
 evals/results/raw/
 
+# CI / local build outputs
+requirements.txt
+sbom.cdx.json
+
 # Editors / OS
 .vscode/
 .idea/
