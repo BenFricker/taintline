@@ -2,7 +2,7 @@
 
 Local-first AI SOC triage agent with a hardened harness, evaluated against log-borne prompt injection.
 
-> **Status: work in progress.** Project setup is done; no results yet. First release (v0.1 "baseline") is planned for December 2026. This repo is built in public: every change lands through a pull request with passing CI, so the history is the progress log.
+> **Status: work in progress.** Project setup is done; no results yet. First release (v0.1 "baseline") is planned for January 2027. This repo is built in public: every change lands through a pull request with passing CI, so the history is the progress log.
 
 ## What this is
 
@@ -18,15 +18,15 @@ The harness and the measurements are the point; the agent is the test subject.
 
 ## Planned releases
 
-- **v0.1 "baseline"** (Dec 2026): synthetic log generator, attack injector, eval harness, undefended baseline.
-- **v0.2 "actions"** (Jan 2027): tool-using agent; permission and taint-tracking controls against action hijacking.
-- **v0.3 "verdicts"** (Feb 2027): verdict-level controls, full security-versus-usefulness results, demo.
+- **v0.1 "baseline"** (Jan 2027): synthetic log generator, attack injector, eval harness, undefended baseline.
+- **v0.2 "actions"** (Feb 2027): tool-using agent; permission and taint-tracking controls against action hijacking.
+- **v0.3 "verdicts"** (Feb–Mar 2027): verdict-level controls, full security-versus-usefulness results, demo.
 
 ## Scope and safety
 
 - Every attack payload targets only taintline's own synthetic log pipeline. Nothing here is aimed at systems the author doesn't own.
 - No real customer, user or personal data is used.
-- This reproduces published attacks to measure defences; it is not new attack research. Sources will be listed in `docs/references.md`.
+- This reproduces published attacks to measure defences; it is not new attack research. Sources are listed in [`docs/references.md`](docs/references.md).
 
 ## Design decisions
 
